@@ -14,19 +14,19 @@ public class MotionTest {
 
     @Test
     void testFinalVelocityUsingDisplacement() {
-        double result = Motion.finalVelocity(10, 5, 2);
-        assertEquals(12.2474487139, result, DELTA, "Expected final velocity with initial velocity 10, displacement 5, and acceleration 2");
+        double result = Motion.finalVelocityUsingDisplacement(10, 5, 2);
+        assertEquals(10.95445, result, DELTA, "Expected final velocity with initial velocity 10, displacement 5, and acceleration 2");
     }
 
     @Test
     void testDisplacementUsingTime() {
         double result = Motion.displacement(10, 5, 2);
-        assertEquals(35, result, DELTA, "Expected displacement with initial velocity 10, time 5, and acceleration 2");
+        assertEquals(75, result, DELTA, "Expected displacement with initial velocity 10, time 5, and acceleration 2");
     }
 
     @Test
     void testDisplacementUsingFinalVelocity() {
-        double result = Motion.displacement(10, 20, 2);
+        double result = Motion.displacementUsingFinalVelocity(10, 20, 2);
         assertEquals(75, result, DELTA, "Expected displacement with initial velocity 10, final velocity 20, and acceleration 2");
     }
 
@@ -38,7 +38,7 @@ public class MotionTest {
 
     @Test
     void testAccelerationUsingDisplacement() {
-        double result = Motion.acceleration(100, 10, 5);
+        double result = Motion.accelerationUsingDisplacement(100, 10, 5);
         assertEquals(4, result, DELTA, "Expected acceleration with displacement 100, initial velocity 10, and time 5");
     }
 
